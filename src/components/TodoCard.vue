@@ -11,7 +11,7 @@
         <novo-todo @novaTarefa="adicionaTarefa"></novo-todo>
       </div>
       <div class="content">
-        <todo-list :tarefas="tarefas" @check="checkTarefa"></todo-list>
+        <todo-list :tarefas="tarefas" @check="checkTarefa" @remover="removerTarefa"></todo-list>
       </div>
     </div>
   </div>
@@ -76,6 +76,9 @@ export default {
     },
     checkTarefa(index) {
       this.tarefas[index]['checked'] = !this.tarefas[index]['checked'];
+    },
+    removerTarefa(index) {
+      this.tarefas.splice(index, 1);
     }
   }
 };
