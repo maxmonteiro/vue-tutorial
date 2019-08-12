@@ -57,13 +57,7 @@ export default {
   computed: {
     hoje: function() {
       let novaData = new Date();
-      return (
-        this.dias[novaData.getDay()] +
-        ", " +
-        novaData.getDate() +
-        " de " +
-        this.meses[novaData.getMonth()]
-      );
+      return `${this.dias[novaData.getDay()]}, ${novaData.getDate()} de ${this.meses[novaData.getMonth()]}`;
     }
   },
   methods: {
