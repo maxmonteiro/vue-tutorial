@@ -11,7 +11,7 @@
         <novo-todo @novaTarefa="adicionaTarefa"></novo-todo>
       </div>
       <div class="content">
-        <todo-list></todo-list>
+        <todo-list :tarefas="tarefas"></todo-list>
       </div>
     </div>
   </div>
