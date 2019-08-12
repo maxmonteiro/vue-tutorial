@@ -2,13 +2,13 @@
   <div class="row">
     <div class="columns">
       <div class="column">
-        <div class="field is-grouped">
+        <div class="field is-grouped" v-for="(tarefa, index) in tarefas" :key="index">
           <p class="control">
             <a class="button is-rounded is-small check-button">
               <span class="icon is-small"></span>
             </a>
           </p>
-          <p class="control is-expanded"></p>
+          <p class="control is-expanded">{{tarefa.description}}</p>
           <p class="control">
             <a class="button is-danger is-small">
               <span class="icon is-small">
@@ -33,6 +33,11 @@ export default {
 };
 </script>
 <style scoped>
+.columns {
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .button {
   border-radius: 500px;
 }
