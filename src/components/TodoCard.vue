@@ -8,7 +8,7 @@
     </header>
     <div class="card-content">
       <div class="content">
-        <novo-todo></novo-todo>
+        <novo-todo @novaTarefa="adicionaTarefa"></novo-todo>
       </div>
       <div class="content"></div>
     </div>
@@ -60,6 +60,15 @@ export default {
         " de " +
         this.meses[novaData.getMonth()]
       );
+    }
+  },
+  methods: {
+    adicionaTarefa(tarefa) {
+      let nova_tarefa = {
+        'description': tarefa,
+        'checked': false
+      };
+      this.tarefas.push(nova_tarefa);
     }
   }
 };
