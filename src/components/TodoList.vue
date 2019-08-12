@@ -4,11 +4,11 @@
       <div class="column">
         <div class="field is-grouped" v-for="(tarefa, index) in tarefas" :key="index">
           <p class="control">
-            <a class="button is-rounded is-small check-button">
+            <a class="button is-rounded is-small check-button" @click="check(index)">
               <span class="icon is-small"></span>
             </a>
           </p>
-          <p class="control is-expanded">{{tarefa.description}}</p>
+          <p class="control is-expanded" :class="{'checked': tarefa.checked}">{{tarefa.description}}</p>
           <p class="control">
             <a class="button is-danger is-small">
               <span class="icon is-small">
@@ -29,6 +29,11 @@ export default {
     return {
 
     };
+  },
+  methods: {
+    check(index) {
+      this.$emit('check', index);
+    }
   }
 };
 </script>
