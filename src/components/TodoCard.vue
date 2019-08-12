@@ -7,28 +7,62 @@
       </div>
     </header>
     <div class="card-content">
-      <div class="content"></div>
+      <div class="content">
+        <novo-todo></novo-todo>
+      </div>
       <div class="content"></div>
     </div>
   </div>
 </template>
 <script>
+import NovoTodo from './NovoTodo';
+
 export default {
-  name: 'todo-card',
+  name: "todo-card",
+  components: {
+    NovoTodo
+  },
   data() {
     return {
-      dias: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-      meses: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      dias: [
+        "Domingo",
+        "Segunda",
+        "Terça",
+        "Quarta",
+        "Quinta",
+        "Sexta",
+        "Sábado"
+      ],
+      meses: [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+      ],
       tarefas: []
-    }
+    };
   },
   computed: {
     hoje: function() {
       let novaData = new Date();
-      return this.dias[novaData.getDay()] + ', ' + novaData.getDate() + ' de ' + this.meses[novaData.getMonth()]
+      return (
+        this.dias[novaData.getDay()] +
+        ", " +
+        novaData.getDate() +
+        " de " +
+        this.meses[novaData.getMonth()]
+      );
     }
   }
-}
+};
 </script>
 <style scoped>
 .card {
