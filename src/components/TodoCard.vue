@@ -10,17 +10,21 @@
       <div class="content">
         <novo-todo @novaTarefa="adicionaTarefa"></novo-todo>
       </div>
-      <div class="content"></div>
+      <div class="content">
+        <todo-list></todo-list>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import NovoTodo from './NovoTodo';
+import TodoList from './TodoList';
 
 export default {
   name: "todo-card",
   components: {
-    NovoTodo
+    NovoTodo,
+    TodoList
   },
   data() {
     return {
